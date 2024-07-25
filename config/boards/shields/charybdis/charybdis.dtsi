@@ -1,5 +1,8 @@
 #include <dt-bindings/zmk/matrix_transform.h>
 
+#include <dt-bindings/led/led.h>
+
+
 / {
     chosen {
         zmk,kscan = &kscan0;
@@ -9,6 +12,21 @@
     vbatt: vbatt {
 	compatible = "zmk,battery-nrf-vddh";
     };
+    
+    &pinctrl {
+	    spi3_default: spi3_default {
+		group1 {
+		    psels = <NRF_PSEL(SPIM_MOSI, 0, 10)>;
+		};
+	    };
+
+	    spi3_sleep: spi3_sleep {
+		group1 {
+		    psels = <NRF_PSEL(SPIM_MOSI, 0, 10)>;
+		    low-power-enable;
+		};
+	    };
+	};
           
     default_transform: keymap_transform_0 {
         compatible = "zmk,matrix-transform";
