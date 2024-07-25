@@ -5,7 +5,7 @@
  */
 
 #include "charybdis.dtsi"
-
+#include <dt-bindings/led/led.h>
 
 
 &kscan0 {
