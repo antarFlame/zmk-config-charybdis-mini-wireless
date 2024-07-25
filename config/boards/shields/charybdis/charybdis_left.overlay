@@ -38,8 +38,12 @@
     chain-length = <29>; /* number of LEDs */
     spi-one-frame = <0x70>;
     spi-zero-frame = <0x40>;
-    color-mapping = <LED_COLOR_ID_GREEN
-                          LED_COLOR_ID_RED
-                          LED_COLOR_ID_BLUE>;
+    color-mapping = <LED_COLOR_ID_GREEN LED_COLOR_ID_RED LED_COLOR_ID_BLUE>;
   };
+};
+
+/ {
+	chosen {
+		zmk,underglow = &led_strip;
+	};
 };
