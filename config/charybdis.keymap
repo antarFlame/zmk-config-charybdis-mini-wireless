@@ -9,7 +9,10 @@
 #define U_TAPPING_TERM 200
 
 / {
-    chosen { zmk,matrix_transform = &default_transform; };
+    chosen {
+        zmk,matrix_transform = &default_transform;
+        zmk,underglow = &led_strip;
+    };
 };
 
 / {
@@ -137,11 +140,11 @@
 
         FUN {
             bindings = <
-&trans  &trans   &trans  &trans   &trans   &trans     &trans        &trans            &trans             &trans           &trans        &trans
-&trans  &trans   &kp F1  &kp F2   &kp F3   &kp F4     &bt BT_SEL 0  &bt BT_SEL 1      &bt BT_SEL 2       &bt BT_SEL 3     &bt BT_SEL 4  &bt BT_CLR
-&trans  &kp DEL  &kp F5  &kp F6   &kp F7   &kp F8     &out OUT_TOG  &kp K_PLAY_PAUSE  &kp C_VOLUME_DOWN  &kp C_VOLUME_UP  &kp C_MUTE    &kp LALT
-&trans  &trans   &kp F9  &kp F10  &kp F11  &kp F12    &trans        &trans            &trans             &trans           &trans        &to 0
-        &trans   &trans  &to 2    &trans   &trans     &trans        &to 4             &trans
+&trans  &trans   &trans  &trans   &trans   &trans     &trans           &trans            &trans             &trans           &trans        &trans
+&trans  &trans   &kp F1  &kp F2   &kp F3   &kp F4     &bt BT_SEL 0     &bt BT_SEL 1      &bt BT_SEL 2       &bt BT_SEL 3     &bt BT_SEL 4  &bt BT_CLR
+&trans  &kp DEL  &kp F5  &kp F6   &kp F7   &kp F8     &out OUT_TOG     &kp K_PLAY_PAUSE  &kp C_VOLUME_DOWN  &kp C_VOLUME_UP  &kp C_MUTE    &kp LALT
+&trans  &trans   &kp F9  &kp F10  &kp F11  &kp F12    &rgb_ug RGB_TOG  &rgb_ug RGB_EFF   &rgb_ug RGB_BRI    &rgb_ug RGB_BRD  &trans        &to 0
+        &trans   &trans  &to 2    &trans   &trans     &trans           &to 4             &trans
             >;
         };
 
