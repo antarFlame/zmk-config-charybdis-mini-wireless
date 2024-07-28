@@ -83,8 +83,8 @@
   compatible = "nordic,nrf-spim";
   status = "okay";
 
-  pinctrl-2 = <&spi3_default>;
-  pinctrl-3 = <&spi3_sleep>;
+  pinctrl-0 = <&spi3_default>;
+  pinctrl-1 = <&spi3_sleep>;
   pinctrl-names = "default", "sleep";
 
   led_strip: ws2812@0 {
