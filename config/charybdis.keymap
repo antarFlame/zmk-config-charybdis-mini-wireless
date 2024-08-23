@@ -9,70 +9,11 @@
 #define U_TAPPING_TERM 200
 
 / {
-    chosen {
-        zmk,matrix_transform = &default_transform;
-    };
+    chosen { zmk,matrix_transform = &default_transform; };
 };
 
 / {
-    combos {
-        compatible = "zmk,combos";
-
-        LeftClickRight {
-            bindings = <&mkp LCLK>;
-            key-positions = <19 20>;
-        };
-
-        RightClickRight {
-            bindings = <&mkp RCLK>;
-            key-positions = <20 21>;
-        };
-
-        MiddleClickRight {
-            bindings = <&mkp MCLK>;
-            key-positions = <21 22>;
-        };
-
-        ParaLeft {
-            bindings = <&kp LEFT_PARENTHESIS>;
-            key-positions = <4 16>;
-        };
-
-        ParaRight {
-            bindings = <&kp RIGHT_PARENTHESIS>;
-            key-positions = <7 19>;
-        };
-
-        BrakLeft {
-            bindings = <&kp LEFT_BRACKET>;
-            key-positions = <3 15>;
-        };
-
-        BrakRight {
-            bindings = <&kp RIGHT_BRACKET>;
-            key-positions = <8 20>;
-        };
-
-        BraceLeft {
-            bindings = <&kp LEFT_BRACE>;
-            key-positions = <2 14>;
-        };
-
-        BraceRight {
-            bindings = <&kp RIGHT_BRACE>;
-            key-positions = <9 21>;
-        };
-
-        Delete {
-            bindings = <&kp DELETE>;
-            key-positions = <8 9>;
-        };
-
-        CapsWord {
-            bindings = <&caps_word>;
-            key-positions = <17 18>;
-        };
-    };
+    combos { compatible = "zmk,combos"; };
 
     behaviors {
         u_mt: u_mt {
@@ -109,31 +50,31 @@
 
         BASE {
             bindings = <
-&kp ESCAPE  &kp N1    &kp N2     &kp N3  &kp N4        &kp N5           &kp N6      &kp N7  &kp N8     &kp N9   &kp N0            &kp MINUS
-&kp TAB     &kp Q     &kp W      &kp E   &kp R         &kp T            &kp Y       &kp U   &kp I      &kp O    &kp P             &kp SLASH
-&kp LSHIFT  &kp A     &kp S      &kp D   &kp F         &kp G            &kp H       &kp J   &kp K      &kp L    &kp SEMICOLON     &kp APOS
-&kp LCTRL   &kp Z     &kp X      &kp C   &kp V         &kp B            &kp N       &kp M   &kp COMMA  &kp DOT  &kp LEFT_BRACKET  &kp RIGHT_BRACKET
-            &kp LWIN  &kp SPACE  &mo 5   &kp LEFT_ALT  &kp BACKSPACE    &kp DELETE  &to 1   &kp ENTER
+&kp ESCAPE  &kp N1     &kp N2     &kp N3  &kp N4        &kp N5           &kp N6     &kp N7  &kp N8        &kp N9   &kp N0            &kp MINUS
+&kp TAB     &kp Q      &kp W      &kp E   &kp R         &kp T            &kp Y      &kp U   &kp I         &kp O    &kp P             &kp BACKSLASH
+&kp LSHIFT  &kp A      &kp S      &kp D   &kp F         &kp G            &kp H      &kp J   &kp K         &kp L    &kp SEMICOLON     &kp APOS
+&kp LCTRL   &kp Z      &kp X      &kp C   &kp V         &kp B            &kp N      &kp M   &kp COMMA     &kp DOT  &kp LEFT_BRACKET  &kp RIGHT_BRACKET
+            &kp ENTER  &kp SPACE  &mo 4   &kp LEFT_ALT  &kp BACKSPACE    &kp SLASH  &to 1   &kp LEFT_GUI
             >;
         };
 
         NAV {
             bindings = <
-&trans  &trans    &trans    &trans     &trans  &trans    &trans           &trans                &trans          &trans  &trans    &trans
-&trans  &trans    &kp UP    &trans     &trans  &trans    &kp N7           &kp N8                &kp N9          &kp N0  &kp HOME  &kp F1
-&trans  &kp LEFT  &kp DOWN  &kp RIGHT  &trans  &trans    &kp N4           &u_mt RIGHT_SHIFT N5  &u_mt RCTRL N6  &trans  &trans    &kp F10
-&trans  &trans    &trans    &trans     &trans  &trans    &kp N1           &kp N2                &kp N3          &trans  &trans    &kp F20
-        &trans    &trans    &to 0      &trans  &trans    &lt 3 BACKSPACE  &to 2                 &trans
+&trans  &trans    &trans    &trans     &trans     &trans    &kp PLUS  &kp KP_MINUS  &kp ASTERISK  &kp KP_DIVIDE  &kp KP_EQUAL          &trans
+&trans  &kp HOME  &kp UP    &kp END    &kp PG_UP  &trans    &kp N7    &kp N8        &kp N9        &trans         &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS
+&trans  &kp LEFT  &kp DOWN  &kp RIGHT  &kp PG_DN  &trans    &kp N4    &kp N5        &kp NUMBER_6  &trans         &kp LEFT_BRACE        &kp RIGHT_BRACE
+&trans  &trans    &trans    &trans     &trans     &trans    &kp N1    &kp N2        &kp N3        &kp KP_DOT     &kp LEFT_BRACKET      &kp RIGHT_BRACKET
+        &trans    &trans    &trans     &trans     &trans    &to 0     &to 2         &kp N0
             >;
         };
 
         SYMNUM {
             bindings = <
-&trans      &trans        &trans       &trans      &trans    &trans       &trans     &trans                   &trans            &trans                &trans                &trans
-&bt BT_CLR  &kp EXCL      &kp AT       &kp HASH    &kp DLLR  &kp PRCNT    &kp CARET  &kp AMPS                 &kp KP_MULTIPLY   &kp LPAR              &kp RPAR              &kp DEL
-&trans      &trans        &bt BT_PRV   &bt BT_NXT  &trans    &trans       &kp UNDER  &u_mt RIGHT_SHIFT EQUAL  &u_mt RCTRL LBKT  &u_mt RIGHT_ALT RBKT  &u_mt RIGHT_GUI BSLH  &kp GRAVE
-&trans      &out OUT_TOG  &bootloader  &trans      &trans    &trans       &kp MINUS  &kp PLUS                 &kp LBRC          &kp RBRC              &kp PIPE              &kp TILDE
-            &trans        &trans       &to 1       &trans    &mo 3        &trans     &to 3                    &trans
+&kp TILDE  &kp EXCLAMATION  &kp AT  &kp HASH  &kp DOLLAR  &kp PERCENT    &kp CARET  &kp AMPERSAND  &kp ASTERISK  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &trans
+&trans     &trans           &trans  &trans    &trans      &trans         &trans     &trans         &trans        &trans                &trans                 &trans
+&trans     &trans           &trans  &trans    &trans      &trans         &trans     &trans         &trans        &trans                &trans                 &trans
+&trans     &trans           &trans  &trans    &trans      &trans         &trans     &trans         &trans        &trans                &trans                 &trans
+           &trans           &trans  &trans    &trans      &trans         &to 1      &to 3          &trans
             >;
         };
 
@@ -143,21 +84,31 @@
 &trans  &trans   &kp F1  &kp F2   &kp F3   &kp F4     &bt BT_SEL 0     &bt BT_SEL 1      &bt BT_SEL 2       &bt BT_SEL 3     &bt BT_SEL 4  &bt BT_CLR
 &trans  &kp DEL  &kp F5  &kp F6   &kp F7   &kp F8     &out OUT_TOG     &kp K_PLAY_PAUSE  &kp C_VOLUME_DOWN  &kp C_VOLUME_UP  &kp C_MUTE    &kp LALT
 &trans  &trans   &kp F9  &kp F10  &kp F11  &kp F12    &rgb_ug RGB_TOG  &rgb_ug RGB_EFF   &rgb_ug RGB_BRI    &rgb_ug RGB_BRD  &trans        &to 0
-        &trans   &trans  &to 2    &trans   &trans     &trans           &to 4             &trans
+        &trans   &trans  &trans   &trans   &trans     &to 2            &trans            &trans
             >;
         };
 
         AUTO-MOUSE {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans       &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans       &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans       &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans       &trans  &trans  &trans  &trans  &trans  &trans
-        &trans  &trans  &to 3   &trans  &mkp RCLK    &trans  &to 5   &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans     &trans     &trans     &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans     &trans     &trans     &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans     &trans     &trans     &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &mkp LCLK  &mkp MCLK  &mkp RCLK  &mo 5   &trans
+        &trans  &trans  &trans  &trans  &trans    &trans  &none      &trans
             >;
         };
 
         SCROLL {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+        &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans
+            >;
+        };
+
+        SNIPER {
             bindings = <
 &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
