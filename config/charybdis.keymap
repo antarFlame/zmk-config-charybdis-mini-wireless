@@ -73,7 +73,7 @@
 &gresc            &kp N1         &kp N2          &kp N3              &kp N4     &kp N5    &kp N6  &kp N7              &kp N8         &kp N9   &kp N0             &kp MINUS
 &kp TAB           &kp Q          &kp W           &u_lt 7 E           &kp R      &kp T     &kp Y   &kp U               &u_lt 6 I      &kp O    &kp P              &kp LEFT_BRACKET
 &kp LSHIFT        &u_lt 8 A      &kp S           &kp D               &kp F      &kp G     &kp H   &kp J               &kp K          &kp L    &u_lt 9 SEMICOLON  &u_mt LEFT_SHIFT APOS
-&kp LEFT_CONTROL  &kp Z          &kp X           &u_lt 6 C           &kp V      &kp B     &kp N   &kp M               &u_lt 6 COMMA  &kp DOT  &kp SLASH          &u_mt LEFT_CONTROL BACKSLASH
+&kp LEFT_CONTROL  &kp Z          &kp X           &u_lt 6 C           &kp V      &kp B     &kp N   &kp M               &u_lt 6 COMMA  &kp DOT  &u_lt 9 SLASH      &u_mt LEFT_CONTROL BACKSLASH
                   &kp BACKSPACE  &kp LEFT_SHIFT  &u_mt LEFT_ALT TAB  &kp SPACE  &mo 2     &mo 1   &u_mt LEFT_ALT TAB  &kp ENTER
             >;
         };
@@ -163,7 +163,7 @@
 &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans     &trans     &trans     &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans     &trans     &trans     &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans    &trans  &mkp LCLK  &mkp MCLK  &mkp RCLK  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans     &trans     &trans     &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &mkp LCLK  &mkp MCLK  &mkp RCLK  &trans  &trans
         &trans  &trans  &trans  &trans  &trans    &trans  &trans     &trans
             >;
         };
