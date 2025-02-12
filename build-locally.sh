@@ -9,8 +9,10 @@ set -euxo pipefail
 build_and_copy () {
     local side=$1
     west build \
-        -b nice_nano_v2 -- \
+        -b nice_nano_v2 \
+        -S studio-rpc-usb-uart -- \
         -DSHIELD=charybdis_$side \
+        -DCONFIG_ZMK_STUDIO=y \
         -DZMK_CONFIG="/home/diogenes/Documents/keyboards/zmk-config-charybdis-mini-wireless/config"
 
     cp "./build/zephyr/zmk.uf2" "$CURRENT_DIR/build/charybdis_$side.uf2"
