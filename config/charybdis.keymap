@@ -99,18 +99,6 @@
 };
 
 / {
-    behaviors {
-        long_hold: long_hold {
-            compatible = "zmk,behavior-hold-tap";
-            label = "LONG_HOLD";
-            bindings = <&bt>, <&none>;
-
-            #binding-cells = <2>;
-            tapping-term-ms = <10000>;
-            flavor = "tap-preferred";
-        };
-    };
-
     keymap {
         compatible = "zmk,keymap";
 
@@ -122,9 +110,9 @@
             //                             | RSE | SPC | LWR |   | LWR | BKSP | RSE |
 
             bindings = <
-&mt LWIN RBKT    &kp Q    &kp W  &kp E      &kp R            &kp T        &kp Y      &kp U           &kp I        &kp O    &kp P            &mt RWIN LBKT
-&mt LCTRL GRAVE  &lt 4 A  &kp S  &kp D      &kp F            &lt 6 G      &lt 6 H    &kp J           &kp K        &kp L    &lt 5 SEMICOLON  &mt RCTRL SQT
-&mt LALT BSLH    &kp Z    &kp X  &kp C      &kp V            &kp B        &kp N      &kp M           &lt 6 COMMA  &kp DOT  &kp FSLH         &mt RALT MINUS
+&mt LWIN RBKT    &kp Q    &kp W  &kp E      &kp R            &kp T        &kp Y      &kp U           &kp I      &kp O    &kp P            &mt RWIN LBKT
+&mt LCTRL GRAVE  &lt 4 A  &kp S  &kp D      &kp F            &lt 6 G      &lt 6 H    &kp J           &kp K      &kp L    &lt 5 SEMICOLON  &mt RCTRL SQT
+&mt LALT BSLH    &kp Z    &kp X  &kp C      &kp V            &kp B        &kp N      &kp M           &kp COMMA  &kp DOT  &kp FSLH         &mt RALT MINUS
                                  &lt 2 TAB  &mt LSHFT SPACE  &lt 1 RET    &lt 1 ESC  &mt RSHFT BSPC  &lt 2 DEL
             >;
         };
@@ -137,10 +125,10 @@
             //                      | ADJ | ___ | ___ |    | ___ | ___ | ADJ |
 
             bindings = <
-&kp LGUI      &kp F1  &kp F2   &kp F3     &kp F4   &kp K_PP            &kp EXCL   &kp AT    &kp HASH   &kp DOLLAR     &kp PERCENT    &kp RGUI
-&kp LCTRL     &kp F5  &kp F6   &kp F7     &kp F8   &kp K_MENU          &kp CARET  &kp AMPS  &kp STAR   &kp LPAR       &kp RPAR       &kp RCTRL
-&kp LEFT_ALT  &kp F9  &kp F10  &kp F11    &kp F12  &kp LS(LEFT_ALT)    &mkp MB1   &mkp MB2  &mkp MB3   &kp LS(LC(C))  &kp LS(LC(V))  &kp RALT
-                               &lt 3 TAB  &trans   &trans              &trans     &trans    &lt 3 DEL
+&kp LGUI      &kp F1  &kp F2   &kp F3     &kp F4   &kp K_PP            &kp EXCL    &kp AT    &kp HASH   &kp DOLLAR  &kp PERCENT  &kp RGUI
+&kp LCTRL     &kp F5  &kp F6   &kp F7     &kp F8   &kp K_MENU          &kp CARET   &kp AMPS  &kp STAR   &kp LPAR    &kp RPAR     &kp RCTRL
+&kp LEFT_ALT  &kp F9  &kp F10  &kp F11    &kp F12  &kp LS(LEFT_ALT)    &kp LA(N8)  &cprght   &degree    &grtsgn     &plsmns      &kp RALT
+                               &lt 3 TAB  &trans   &trans              &trans      &trans    &lt 3 DEL
             >;
         };
 
@@ -167,10 +155,10 @@
             //                   |     |     |     |   |     |     |     |
 
             bindings = <
-&bootloader          &studio_unlock  &none         &none         &none         &none           &none                    &none         &none         &none         &studio_unlock  &bootloader
-&long_hold BT_CLR 0  &bt BT_SEL 0    &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &bt BT_SEL 4             &bt BT_SEL 3  &bt BT_SEL 2  &bt BT_SEL 1  &bt BT_SEL 0    &long_hold BT_CLR 0
-&ext_power EP_OFF    &kp KP_NUM      &none         &none         &none         &none           &kp LS(LC(PRINTSCREEN))  &none         &none         &none         &none           &ext_power EP_OFF
-                                                   &trans        &none         &trans          &trans                   &none         &trans
+&bootloader        &studio_unlock  &none         &none         &none         &none           &none         &none         &none         &none         &studio_unlock  &bootloader
+&bt BT_CLR         &bt BT_SEL 0    &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &bt BT_SEL 4  &bt BT_SEL 3  &bt BT_SEL 2  &bt BT_SEL 1  &bt BT_SEL 0    &bt BT_CLR
+&ext_power EP_OFF  &kp KP_NUM      &none         &none         &none         &none           &none         &none         &none         &none         &none           &ext_power EP_OFF
+                                                 &trans        &none         &trans          &trans        &none         &trans
             >;
         };
 
@@ -211,4 +199,3 @@
         };
     };
 };
-
